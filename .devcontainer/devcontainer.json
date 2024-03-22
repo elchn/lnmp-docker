@@ -1,4 +1,5 @@
 {
   "build.dockerfile":"Dockerfile",
-  "containerUser":"root"
+  "containerUser":"root",
+  "remoteUser":"root"
 }
