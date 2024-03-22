@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:lastest
 
-RUN apt-get install -y nginx;
+RUN sudo apt-get install -y nginx;
 
 
