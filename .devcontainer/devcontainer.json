@@ -1,7 +1,21 @@
 {
-  "build":{
-    "dockerfile":"Dockerfile"
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "phpVersion": "${localEnv:php_version:8.2}",
+      "phpMyadmin": "${localEnv:phpmyadmin:5.2.1}"
+    }
   },
-  "containerUser":"root",
-  "remoteUser":"root"
+  "containerUser": "root",
+  "remoteUser": "root",
+  "containerEnv": {
+    "PHP_VERSION": "${localEnv:php_version:8.2}",
+    "PHPMYADMIN": "${localEnv:phpmyadmin:5.2.1}"
+  },
+  "postAttachCommand": {
+    // "db": "service mariadb start",
+    // "nginx": "service nginx start"
+    // // "php-fpm": "service php${PHP_VERSION}-fpm start"
+    "initiation": "/entrypoint.sh"
+  }
 }
